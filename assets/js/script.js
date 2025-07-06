@@ -28,7 +28,7 @@ window.addEventListener('scroll', () => {
     });
 
     navItems.forEach(link => {
-        item.classList.remove('active');
+        link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
         }
@@ -55,3 +55,26 @@ function diminuirFonte() {
 function alternarContraste() {
     document.body.classList.toggle('contraste');
 }
+// ---Lógica para o botão de voltar ao topo
+
+const botaoVoltarTopo = document.getElementById('voltar-topo');
+
+window.addEventListener('scroll', () => {
+
+
+    // Mostrar o botão quando a rolagem for maior que 300 pixels (ajuste conforme necessário)
+    if (window.pageYOffset> 300) {
+        // exibe o botão
+        botaoVoltarTopo.style.opacity = '1';
+
+        botaoVoltarTopo.style.visibility = 'visible';
+    } 
+    else {
+        // esconde o botão
+        botaoVoltarTopo.style.opacity = '0';
+        botaoVoltarTopo.style.visibility = 'hidden';
+    }
+       
+    
+});
+
